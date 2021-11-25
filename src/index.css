@@ -1,8 +1,28 @@
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
+
 
 body, html {
   color: #fff;
   background: linear-gradient(290deg, #231036, #1d0e33, #180d33, #150e33, #0c0a29);
+}
+
+.background {
+  background: url(assets/alchemy-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  filter: brightness(.15);
+  overflow: hidden;
 }

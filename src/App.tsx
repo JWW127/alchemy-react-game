@@ -3,7 +3,9 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-      <h1>Hello Friend</h1>
+      <div className="background">
+        
+      </div>
     </div>
   );
 }
