@@ -1,55 +1,105 @@
-import React from 'react'
-import { GiCampfire, GiWaterDrop, GiSteam, GiGroundSprout } from "react-icons/gi";
-
-type jsxType = any
+import React, { useEffect, useState } from "react";
+import { IconType } from "react-icons";
+import {
+  GiCampfire,
+  GiGroundSprout,
+  GiSteam,
+  GiWaterDrop,
+} from "react-icons/gi";
+import {  SiTailwindcss} from 'react-icons/si'
 
 interface ingredient {
   name: string;
   isActive: boolean;
-  icon?: jsxType;
+  icon?: IconType;
   color: string;
+  combo?: string
 }
 
-
-let allIngredients: ingredient[] = [
+const ingredientsArr: ingredient[] = [
   {
-    name: 'fire',
-    isActive: true,
+    name: "fire",
     icon: GiCampfire,
-    color: 'red'
+    color: "red",
+    isActive: true,
   },
   {
-    name: 'water',
-    isActive: true,
+    name: "water",
     icon: GiWaterDrop,
-    color: 'blue'
+    color: "blue",
+    isActive: true,
   },
   {
-    name: 'air',
+    name: "air",
+    icon: SiTailwindcss,
+    color: "white",
     isActive: true,
-    icon: GiSteam,
-    color: 'white'
   },
   {
-    name: 'earth',
-    isActive: true,
+    name: "earth",
     icon: GiGroundSprout,
-    color: 'brown'
+    color: "brown",
+    isActive: true,
+  },
+  {
+    name: "steam",
+    icon: GiSteam,
+    color: "white",
+    combo: "firewater",
+    isActive: false
   }
-]
+];
 
-const isActiveArr: ingredient[] = allIngredients.filter((ingredient) => ingredient.isActive === true)
+const isActiveArr: ingredient[] = ingredientsArr.filter(
+  (ingredient) => ingredient.isActive === true
+);
 
-let water = isActiveArr.map((data:any):any => data)
+// const notActiveArr: ingredient[] = ingredientsArr.filter(
+//   (ingredient) => ingredient.isActive === false
+// );
 
-console.log(water)
-
+//! should we use active and not active and just pop from one to another?
 
 
 export const Ingredient: React.FC = () => {
+  const [currentIngredients, setIngredients] = useState(isActiveArr);
+  const [combo, setCombo] = useState<string[] >([])
+
+  function handleUpdate(data: ingredient) {
+    if(combo.length < 2) {
+     setCombo((combo) => [...combo, data.name])
+    }
+  }
+  
+  useEffect(() => {
+    if(combo.length === 2){
+      let comboCheck = combo.join('')
+      ingredientsArr.forEach(item => {
+        if(item.combo === comboCheck) {
+          setIngredients([...currentIngredients, item])
+          setCombo(() => [])
+          console.log(combo)
+        }
+      })
+      // setIngredients([...currentIngredients, data]);
+    }
+
+  },[combo])
+
   return (
-<>
-  {water.map((data:any) => <div className="ingredient" key={data.name}><button key={data.name}><data.icon key={data.name} className={data.color}/></button></div>)}
-  </>
-  )
+    <>
+      {currentIngredients.map((data: any) => (
+        <div className="ingredient" key={data.name}>
+          <button
+            key={data.name}
+            onClick={()=>handleUpdate(data)}
+          >
+            <data.icon key={data.name} className={data.color} />
+          </button>
+        </div>
+      ))}
+    </>
+  );
 };
+
+export default Ingredient;
