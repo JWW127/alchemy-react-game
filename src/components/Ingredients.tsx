@@ -14,7 +14,7 @@ interface ingredient {
   isActive: boolean;
   icon?: IconType;
   color: string;
-  combo?: string
+  mix?: string
 }
 
 const ingredientsArr: ingredient[] = [
@@ -46,14 +46,14 @@ const ingredientsArr: ingredient[] = [
     name: "steam",
     icon: GiSteam,
     color: "white",
-    combo: "firewater",
+    mix: "firewater",
     isActive: false
   },
   {
     name: "ice",
     icon: GiIceCube,
     color: "blue",
-    combo: "airwater",
+    mix: "airwater",
     isActive: false
   }
 ];
@@ -73,27 +73,34 @@ export const Ingredient: React.FC = () => {
   const [currentIngredients, setIngredients] = useState(isActiveArr);
   const [combo, setCombo] = useState<string[] >([])
 
+  //button click will update combo array
   function handleUpdate(data: ingredient) {
     if(combo.length < 2) {
      setCombo((combo) => [...combo, data.name])
     }
   }
-  
+ 
+  //checks combo vs ingredient.mix to see if valid ingredient
   useEffect(() => {
     if(combo.length === 2){
       let comboCheck = combo.join('')
       let comboCheckReverse = combo.reverse().join('')
+        console.log(comboCheck, comboCheckReverse)
       ingredientsArr.forEach(item => {
-        if(item.combo === comboCheck || comboCheckReverse) {
-          setIngredients([...currentIngredients, item])
-          setCombo([])
-          console.log(combo)
+          console.log(item.mix)
+            //forward check ex. firewater
+        if(item.mix === comboCheck) {
+             return setIngredients([...currentIngredients, item])
+        }
+            //backwards check ex waterfire
+        if(item.mix === comboCheckReverse){
+             return setIngredients([...currentIngredients, item])
         }
       })
-      // setIngredients([...currentIngredients, data]);
+      setCombo([])
     }
 
-  },[combo,currentIngredients])
+  },[combo, currentIngredients])
 
   return (
     <>
