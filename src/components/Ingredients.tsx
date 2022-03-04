@@ -5,6 +5,7 @@ import {
   GiGroundSprout,
   GiSteam,
   GiWaterDrop,
+  GiIceCube,
 } from "react-icons/gi";
 import {  SiTailwindcss} from 'react-icons/si'
 
@@ -47,6 +48,13 @@ const ingredientsArr: ingredient[] = [
     color: "white",
     combo: "firewater",
     isActive: false
+  },
+  {
+    name: "ice",
+    icon: GiIceCube,
+    color: "blue",
+    combo: "airwater",
+    isActive: false
   }
 ];
 
@@ -74,17 +82,18 @@ export const Ingredient: React.FC = () => {
   useEffect(() => {
     if(combo.length === 2){
       let comboCheck = combo.join('')
+      let comboCheckReverse = combo.reverse().join('')
       ingredientsArr.forEach(item => {
-        if(item.combo === comboCheck) {
+        if(item.combo === comboCheck || comboCheckReverse) {
           setIngredients([...currentIngredients, item])
-          setCombo(() => [])
+          setCombo([])
           console.log(combo)
         }
       })
       // setIngredients([...currentIngredients, data]);
     }
 
-  },[combo])
+  },[combo,currentIngredients])
 
   return (
     <>
