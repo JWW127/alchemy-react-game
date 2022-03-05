@@ -62,7 +62,7 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
   (ingredient) => ingredient.isActive === true
 );
 
-// const notActiveArr: ingredient[] = ingredientsArr.filter(
+// const notActiveArr: Ingredient[] = ingredientsArr.filter(
 //   (ingredient) => ingredient.isActive === false
 // );
 
@@ -86,14 +86,17 @@ export const Ingredient: React.FC = () => {
       let comboCheck = combo.join('')
       let comboCheckReverse = combo.reverse().join('')
         console.log(comboCheck, comboCheckReverse)
-      ingredientsArr.forEach(item => {
+      ingredientsArr.forEach((item,index) => {
           console.log(item.mix)
             //forward check ex. firewater
         if(item.mix === comboCheck) {
+            ingredientsArr.splice(index, 1)
+            console.log(ingredientsArr)
              return setIngredients([...currentIngredients, item])
         }
             //backwards check ex waterfire
         if(item.mix === comboCheckReverse){
+            ingredientsArr.splice(index, 1)
              return setIngredients([...currentIngredients, item])
         }
       })
@@ -101,6 +104,7 @@ export const Ingredient: React.FC = () => {
     }
 
   },[combo, currentIngredients])
+
 
   return (
     <>
