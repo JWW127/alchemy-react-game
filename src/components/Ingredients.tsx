@@ -6,8 +6,11 @@ import {
   GiSteam,
   GiWaterDrop,
   GiIceCube,
+  GiHeavyRain,
+  GiSnowing,
 } from "react-icons/gi";
 import {  SiTailwindcss} from 'react-icons/si'
+import { FaMountain } from "react-icons/fa"
 
 interface ingredient {
   name: string;
@@ -55,7 +58,31 @@ const ingredientsArr: ingredient[] = [
     color: "blue",
     mix: "airwater",
     isActive: false
+  },
+  {
+  name: "mountain",
+  icon: FaMountain,
+  color: "blue-gray",
+  mix: "earthearth",
+  isActive: false
+  },
+  {
+  name: "rain",
+  icon: GiHeavyRain,
+  color: "blue",
+  mix: "waterwater",
+  isActive: false
+  },
+  {
+  name: "snow",
+  icon: GiSnowing,
+  color: "white",
+  mix: "icerain",
+  isActive: false
   }
+
+
+
 ];
 
 const isActiveArr: ingredient[] = ingredientsArr.filter(
