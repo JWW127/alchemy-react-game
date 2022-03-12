@@ -1,20 +1,53 @@
 :root {
     --shadow-color: 54deg 100% 24%;
+    --shadow-color-2: 294deg 100% 16%;
     --shadow-elevation-low: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
-        0px 1.4px 1.8px -0.7px hsl(var(--shadow-color) / 0.34),
-        0px 3.2px 4.1px -1.4px hsl(var(--shadow-color) / 0.46);
+    0px 1.4px 1.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    0px 3.2px 4.1px -1.4px hsl(var(--shadow-color) / 0.46);
     --shadow-elevation-medium: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.23),
-        0px 3.1px 4px -0.5px hsl(var(--shadow-color) / 0.33),
-        -0.1px 7.1px 9.2px -0.9px hsl(var(--shadow-color) / 0.42),
-        -0.2px 15.9px 20.5px -1.4px hsl(var(--shadow-color) / 0.51);
+    0px 3.1px 4px -0.5px hsl(var(--shadow-color) / 0.33),
+    -0.1px 7.1px 9.2px -0.9px hsl(var(--shadow-color) / 0.42),
+    -0.2px 15.9px 20.5px -1.4px hsl(var(--shadow-color) / 0.51);
     --shadow-elevation-high: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
-        -0.1px 6.6px 8.5px -0.2px hsl(var(--shadow-color) / 0.26),
-        -0.2px 12px 15.5px -0.4px hsl(var(--shadow-color) / 0.3),
-        -0.2px 18.6px 24px -0.6px hsl(var(--shadow-color) / 0.34),
-        -0.4px 27.7px 35.7px -0.8px hsl(var(--shadow-color) / 0.39),
-        -0.5px 40.9px 52.8px -1px hsl(var(--shadow-color) / 0.43),
-        -0.8px 59.5px 76.8px -1.2px hsl(var(--shadow-color) / 0.47),
-        -1.1px 85.3px 110px -1.4px hsl(var(--shadow-color) / 0.51);
+    -0.1px 6.6px 8.5px -0.2px hsl(var(--shadow-color) / 0.26),
+    -0.2px 12px 15.5px -0.4px hsl(var(--shadow-color) / 0.3),
+    -0.2px 18.6px 24px -0.6px hsl(var(--shadow-color) / 0.34),
+    -0.4px 27.7px 35.7px -0.8px hsl(var(--shadow-color) / 0.39),
+    -0.5px 40.9px 52.8px -1px hsl(var(--shadow-color) / 0.43),
+    -0.8px 59.5px 76.8px -1.2px hsl(var(--shadow-color) / 0.47),
+    -1.1px 85.3px 110px -1.4px hsl(var(--shadow-color) / 0.51);
+
+    --shadow-elevation-low-2:
+    0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.34),
+    0px 0.5px 0.6px -1.2px hsl(var(--shadow-color-2) / 0.34),
+    0px 1.2px 1.3px -2.5px hsl(var(--shadow-color-2) / 0.34);
+    --shadow-elevation-medium-2:
+    0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.36),
+    0px 1px 1.1px -0.8px hsl(var(--shadow-color-2) / 0.36),
+    0.1px 2.5px 2.8px -1.7px hsl(var(--shadow-color-2) / 0.36),
+    0.2px 6px 6.8px -2.5px hsl(var(--shadow-color-2) / 0.36);
+    --shadow-elevation-high-2:
+    0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.34),
+    0.1px 1.8px 2px -0.4px hsl(var(--shadow-color-2) / 0.34),
+    0.1px 3.3px 3.7px -0.7px hsl(var(--shadow-color-2) / 0.34),
+    0.2px 5.4px 6.1px -1.1px hsl(var(--shadow-color-2) / 0.34),
+    0.3px 8.6px 9.7px -1.4px hsl(var(--shadow-color-2) / 0.34),
+    0.5px 13.4px 15.1px -1.8px hsl(var(--shadow-color-2) / 0.34),
+    0.8px 20.4px 23px -2.1px hsl(var(--shadow-color-2) / 0.34),
+    1.2px 30.1px 33.9px -2.5px hsl(var(--shadow-color-2) / 0.34);
+}
+
+/* animatiosn */
+@keyframes fire-fx {
+    from {
+        color: rgb(220, 15, 5);
+    filter: drop-shadow(0px 0px 2px yellow);
+    }
+
+    to {
+        color: rgb(255, 0, 0);
+    filter: drop-shadow(0px 3px -2px yellow);
+    }
 }
 
 * {
@@ -63,10 +96,10 @@ main {
 .ingredientContainer {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    align-content: flex-start;
+    align-content: center;
     width: 99%;
     height: 90%;
     border: 1px solid rgb(0, 128, 0);
@@ -86,7 +119,8 @@ button {
     padding: none;
     width: 4rem;
     height: 4rem;
-    box-shadow: var(--shadow-elevation-high);
+    border: 1px solid purple ;
+    box-shadow: var(--shadow-elevation-high-2);
     margin: 5px;
 }
 
@@ -101,7 +135,10 @@ button {
     width: 2em;
     height: 2em;
     color: rgb(255, 0, 0);
-    filter: drop-shadow(0px 0px 4px yellow);
+    animation-duration: 1s;
+    animation-name: fire-fx;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .yellow {

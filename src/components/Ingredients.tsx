@@ -7,9 +7,12 @@ import {
   GiWaterDrop,
   GiIceCube,
   GiHeavyRain,
+  GiTornado,
   GiSnowing,
 } from "react-icons/gi";
-import {  SiTailwindcss} from 'react-icons/si'
+import { WiWindy } from "react-icons/wi";
+import { BsWind } from "react-icons/bs";
+//import {  SiTailwindcss} from 'react-icons/si'
 import { FaMountain } from "react-icons/fa"
 
 interface ingredient {
@@ -21,67 +24,79 @@ interface ingredient {
 }
 
 const ingredientsArr: ingredient[] = [
-  {
+    {
     name: "fire",
     icon: GiCampfire,
     color: "red",
     isActive: true,
-  },
-  {
+    },
+    {
     name: "water",
     icon: GiWaterDrop,
     color: "blue",
     isActive: true,
-  },
-  {
+    },
+    {
     name: "air",
-    icon: SiTailwindcss,
+    icon: WiWindy,
     color: "white",
     isActive: true,
-  },
-  {
+    },
+    {
     name: "earth",
     icon: GiGroundSprout,
     color: "brown",
     isActive: true,
-  },
-  {
+    },
+    {
     name: "steam",
     icon: GiSteam,
     color: "white",
     mix: "firewater",
     isActive: false
-  },
-  {
+    },
+    {
     name: "ice",
     icon: GiIceCube,
     color: "blue",
     mix: "airwater",
     isActive: false
-  },
-  {
-  name: "mountain",
-  icon: FaMountain,
-  color: "blue-gray",
-  mix: "earthearth",
-  isActive: false
-  },
-  {
-  name: "rain",
-  icon: GiHeavyRain,
-  color: "blue",
-  mix: "waterwater",
-  isActive: false
-  },
-  {
-  name: "snow",
-  icon: GiSnowing,
-  color: "white",
-  mix: "icerain",
-  isActive: false
-  }
-
-
+    },
+    {
+    name: "mountain",
+    icon: FaMountain,
+    color: "blue-gray",
+    mix: "earthearth",
+    isActive: false
+    },
+    {
+    name: "rain",
+    icon: GiHeavyRain,
+    color: "blue",
+    mix: "waterwater",
+    isActive: false
+    },
+    {
+    name: "snow",
+    icon: GiSnowing,
+    color: "white",
+    mix: "icerain",
+    isActive: false
+    },
+    {
+    name: "wind",
+    icon: BsWind,
+    color: "white",
+    mix: "airair",
+    isActive: false
+    },
+    {
+    name: "tornado",
+    icon: GiTornado,
+    color: "white",
+    mix: "windwind",
+    isActive: false
+    }
 
 ];
 
