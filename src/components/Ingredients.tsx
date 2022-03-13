@@ -10,6 +10,7 @@ import {
   GiTornado,
   GiSnowing,
 } from "react-icons/gi";
+import { HiFire } from "react-icons/hi";
 import { WiWindy } from "react-icons/wi";
 import { BsWind } from "react-icons/bs";
 //import {  SiTailwindcss} from 'react-icons/si'
@@ -26,7 +27,7 @@ interface ingredient {
 const ingredientsArr: ingredient[] = [
     {
     name: "fire",
-    icon: GiCampfire,
+    icon: HiFire,
     color: "red",
     isActive: true,
     },
@@ -72,7 +73,7 @@ const ingredientsArr: ingredient[] = [
     {
     name: "rain",
     icon: GiHeavyRain,
-    color: "blue",
+    color: "raining",
     mix: "waterwater",
     isActive: false
     },
@@ -96,8 +97,14 @@ const ingredientsArr: ingredient[] = [
     color: "white",
     mix: "windwind",
     isActive: false
+    },
+    {
+    name: "campfire",
+    icon: GiCampfire,
+    color: "burning",
+    mix: "firefire",
+    isActive: false
     }
-
 ];
 
 const isActiveArr: ingredient[] = ingredientsArr.filter(

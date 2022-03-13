@@ -50,6 +50,19 @@
     }
 }
 
+@keyframes water-fx {
+    from {
+    transform: rotate(0deg);
+    filter: drop-shadow(0px 0px 2px aqua);
+    }
+
+    to {
+    transform: rotate(15deg);
+    color: rgb(0, 139, 139);
+    filter: drop-shadow(0px 3px 3px blue);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -135,8 +148,25 @@ button {
     width: 2em;
     height: 2em;
     color: rgb(255, 0, 0);
-    animation-duration: 1s;
+    filter: drop-shadow(0px 0px 4px yellow);
+}
+
+.burning {
+    width: 2em;
+    height: 2em;
+    color: rgb(255, 0, 0);
     animation-name: fire-fx;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.raining {
+    width: 2em;
+    height: 2em;
+    color: rgb(1, 217, 255);
+    animation-duration: 1.5s;
+    animation-name: water-fx;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
