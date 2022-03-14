@@ -1,5 +1,3 @@
-
-import React from 'react'
 import { Ingredient } from './Ingredients'
 
 export const IngredientsContainer = () => {

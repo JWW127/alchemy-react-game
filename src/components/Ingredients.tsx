@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { IconType } from "react-icons";
 import {
   GiCampfire,
@@ -111,14 +111,8 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
   (ingredient) => ingredient.isActive === true
 );
 
-// const notActiveArr: Ingredient[] = ingredientsArr.filter(
-//   (ingredient) => ingredient.isActive === false
-// );
 
-//! should we use active and not active and just pop from one to another?
-
-
-export const Ingredient: React.FC = () => {
+ export const Ingredient: React.FC = () => {
   const [currentIngredients, setIngredients] = useState(isActiveArr);
   const [combo, setCombo] = useState<string[] >([])
 
@@ -128,9 +122,8 @@ export const Ingredient: React.FC = () => {
      setCombo((combo) => [...combo, data.name])
     }
   }
- 
-  //checks combo vs ingredient.mix to see if valid ingredient
-  useEffect(() => {
+
+  const checkForMatch = useCallback(() : any => {
     if(combo.length === 2){
       let comboCheck = combo.join('')
       let comboCheckReverse = combo.reverse().join('')
@@ -151,10 +144,17 @@ export const Ingredient: React.FC = () => {
       })
       setCombo([])
     }
+  }, [combo, currentIngredients])
+ 
+  //checks combo vs ingredient.mix to see if valid ingredient
+  useEffect(() => {
+    checkForMatch()
+  },[checkForMatch])
 
-  },[combo, currentIngredients])
 
-
+  // takes the currentIngredients[] and maps over it to hydrate
+  // our dom with <div><button><icon></button></div>
+  // considering removing div and adjusting css accordingly
   return (
     <>
       {currentIngredients.map((data: any) => (
@@ -171,4 +171,3 @@ export const Ingredient: React.FC = () => {
   );
 };
 
-export default Ingredient;
