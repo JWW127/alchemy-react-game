@@ -3,6 +3,7 @@ import { IconType } from "react-icons";
 import {
   GiCampfire,
   GiGroundSprout,
+  GiStripedSun,
   GiSteam,
   GiWaterDrop,
   GiIceCube,
@@ -103,6 +104,13 @@ const ingredientsArr: ingredient[] = [
     icon: GiCampfire,
     color: "burning",
     mix: "firefire",
+    isActive: false
+    },
+    {
+    name: "sun",
+    icon: GiStripedSun,
+    color: "burning",
+    mix: "firecampfire",
     isActive: false
     }
 ];
