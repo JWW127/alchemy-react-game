@@ -88,7 +88,7 @@ const ingredientsArr: ingredient[] = [
     {
     name: "wind",
     icon: BsWind,
-    color: "white",
+    color: "windy",
     mix: "airair",
     isActive: false
     },
@@ -109,7 +109,7 @@ const ingredientsArr: ingredient[] = [
     {
     name: "sun",
     icon: GiStripedSun,
-    color: "burning",
+    color: "sunny",
     mix: "firecampfire",
     isActive: false
     }
@@ -171,7 +171,7 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
             key={data.name}
             onClick={()=>handleUpdate(data)}
           >
-            <data.icon key={data.name} className={data.color} />
+            <data.icon key={data.name} className={data.color} alt={data.name} />
           </button>
         </div>
       ))}

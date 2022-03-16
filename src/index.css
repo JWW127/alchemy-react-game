@@ -50,6 +50,18 @@
     }
 }
 
+@keyframes sun-fx {
+    from {
+        filter: invert(1%);
+        filter: hue-rotate(90deg);
+    }
+
+    to {
+        filter: invert(100%);
+        filter: hue-rotate(270deg);
+    }
+}
+
 @keyframes water-fx {
     from {
     transform: rotate(0deg);
@@ -62,6 +74,21 @@
     filter: drop-shadow(0px 3px 3px blue);
     }
 }
+
+@keyframes wind-fx {
+    from {
+    transform: translate(0px);
+    color: rgb(192, 186, 180);
+    filter: opacity(1);
+    }
+
+    to {
+    color: rgb(0, 139, 139);
+    transform: translate(10px);
+    filter: opacity(.03);
+    }
+}
+
 
 * {
     margin: 0;
@@ -114,8 +141,8 @@ main {
     flex-wrap: wrap;
     align-content: center;
     width: 99%;
-    height: 90%;
-    border: 1px solid rgb(0, 128, 0);
+    height: 86%;
+    border-bottom: rgb(214, 194, 10) 1px solid;
 }
 
 button {
@@ -123,6 +150,14 @@ button {
     height: 100%;
     width: 100%;
 }
+
+button:active {
+    border: 2px solid yellow;
+}
+
+button:focus {
+    border: 2px solid yellow;
+} 
 
 .ingredient {
     display: flex;
@@ -161,6 +196,17 @@ button {
     animation-direction: alternate;
 }
 
+.sunny {
+    width: 2em;
+    height: 2em;
+    color: rgb(255, 0, 0);
+    animation: sun-fx;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+} 
+
 .raining {
     width: 2em;
     height: 2em;
@@ -169,6 +215,17 @@ button {
     animation-name: water-fx;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+.windy {
+    width: 2em;
+    height: 2em;
+    filter: drop-shadow(0px 0px 4px rgb(27, 85, 102));
+    animation-duration: 2.3s;
+    animation-name: wind-fx;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in;
 }
 
 .yellow {
