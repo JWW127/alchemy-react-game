@@ -119,6 +119,7 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
   (ingredient) => ingredient.isActive === true
 );
 
+//todo: need to create a copy of ingredientsArr, "play agian" will require unmutated refrence
 
  export const Ingredient: React.FC = () => {
   const [currentIngredients, setIngredients] = useState(isActiveArr);

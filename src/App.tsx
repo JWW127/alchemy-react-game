@@ -1,5 +1,6 @@
 import React from "react";
 import {IngredientsContainer} from "./components/IngredientsContainer";
+import {Dash} from "./components/dash";
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
       <div className="background">
         <main>
          <IngredientsContainer/>
-          <div></div>
+          <div className="dash-container">
+              <Dash />
+          </div>
         </main>
       </div>
     </div>

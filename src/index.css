@@ -121,14 +121,15 @@ html {
 }
 
 main {
-    width: 80vw;
-    height: 80vh;
-    border: rgb(214, 194, 10) 3px groove;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    width: 80vw;
+    height: 80vh;
+    border: rgb(214, 194, 10) 3px groove;
+    border-radius: 6px;
     padding: 1rem;
     box-shadow: var(--shadow-elevation-medium);
 }
@@ -140,6 +141,7 @@ main {
     align-items: flex-start;
     flex-wrap: wrap;
     align-content: center;
+    overflow: auto;
     width: 99%;
     height: 86%;
     border-bottom: rgb(214, 194, 10) 1px solid;
@@ -164,12 +166,20 @@ button:focus {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: none;
     width: 4rem;
     height: 4rem;
     border: 1px solid purple ;
+    border-radius: 6px;
     box-shadow: var(--shadow-elevation-high-2);
     margin: 5px;
+}
+
+.dash-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
 }
 
 .blue {
