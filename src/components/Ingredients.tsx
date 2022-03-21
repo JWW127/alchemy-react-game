@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useCallback } from "react";
-import {ingredientsArr, ingredient} from '../allIngredients'
-
+import { ingredientsArr, ingredient } from '../allIngredients'
 
 const isActiveArr: ingredient[] = ingredientsArr.filter(
   (ingredient) => ingredient.isActive === true
 );
 
-//todo: need to create a copy of ingredientsArr, "play agian" will require unmutated refrence
 
- export const Ingredient: React.FC = () => {
+export const Ingredient: React.FC = () => {
   const [currentIngredients, setIngredients] = useState(isActiveArr);
-  const [combo, setCombo] = useState<string[] >([])
+  const [combo, setCombo] = useState<string[] >([]);
+//  const [modal, setModal] = useState<string>("modal");
 
   //button click will update combo array
   function handleUpdate(data: ingredient) {
@@ -19,7 +18,7 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
     }
   }
 
-  const checkForMatch = useCallback(() : any => {
+  const checkForMatch = useCallback((): any => {
     if(combo.length === 2){
       let comboCheck = combo.join('')
       let comboCheckReverse = combo.reverse().join('')
@@ -43,10 +42,13 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
   }, [combo, currentIngredients])
  
   //checks combo vs ingredient.mix to see if valid ingredient
-  useEffect(() => {
+  useEffect(():void => {
     checkForMatch()
   },[checkForMatch])
 
+ // const clickStart = ():void => {
+ //     setModal("no-modal")
+ // }
 
   // takes the currentIngredients[] and maps over it to hydrate
   // our dom with <div><button><icon></button></div>
@@ -63,6 +65,7 @@ const isActiveArr: ingredient[] = ingredientsArr.filter(
           </button>
         </div>
       ))}
+
     </>
   );
 };

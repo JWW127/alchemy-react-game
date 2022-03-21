@@ -153,13 +153,31 @@ button {
     width: 100%;
 }
 
+button:focus-visible {
+    background-color: rgba(166, 15, 45,.55);
+} 
+
 button:active {
-    border: 2px solid yellow;
+    border: 1px solid yellow;
+    border-radius: 6px;
 }
 
-button:focus {
+.modal {
+    color: yellow;
+    background-color: rgba(200,100,0,.8);
+    z-index: 2;
+    position: absolute;
+    top: 30vh;
+    font-size: 3rem;
+    height: 40vh;
+    width: 80vw;
     border: 2px solid yellow;
-} 
+    border-radius: 6px;
+}
+
+.no-modal {
+    display: none;
+}
 
 .ingredient {
     display: flex;
@@ -173,6 +191,7 @@ button:focus {
     box-shadow: var(--shadow-elevation-high-2);
     margin: 5px;
 }
+
 
 .dash-container {
     display: flex;

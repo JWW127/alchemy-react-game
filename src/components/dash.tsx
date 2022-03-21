@@ -1,24 +1,36 @@
-import {useState} from 'react'
-interface Timer {
-    sec: number,
-    min: number,
-    hour: number,
+import {useState, useEffect} from 'react'
+type Props = {
+    startClock: boolean 
 }
+export const Dash: React.FC<any> = (props: Props)  => {
 
-const gameTime: Timer = {
-    sec: 22,
-    min: 22,
-    hour: 22
-}
-export const Dash: React.FC = () => {
+const [time, setTime] = useState(0);
+const [running, setRunning] = useState(false);
 
-   const [clock, setClock] = useState(gameTime) 
+
+  useEffect(() => {
+      let interval:any;
+    if(props.startClock){
+        setRunning(true)
+    }
+    if (running) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 10);
+      }, 10);
+    } else if (!running) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [running, props.startClock])
+
 
     return(
         <>
             <div>
         <h1>Time</h1>
-                <p>{clock.hour}:{clock.min}:{clock.sec}</p>
+                <p>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+                    {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
+                {("0" + ((time / 10) % 100)).slice(-2)}</p>
             </div>
             <div>
         <h1>Record</h1>
