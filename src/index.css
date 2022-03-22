@@ -164,7 +164,7 @@ button:active {
 
 .modal {
     color: yellow;
-    background-color: rgba(200,100,0,.8);
+    background-color: rgba(166,15,45,.8);
     z-index: 2;
     position: absolute;
     top: 30vh;
@@ -194,6 +194,7 @@ button:active {
 
 
 .dash-container {
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: space-around;

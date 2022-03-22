@@ -27,14 +27,12 @@ const [running, setRunning] = useState(false);
     return(
         <>
             <div>
-        <h1>Time</h1>
-                <p>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+                <h1>Time</h1>
+                <p>
+                    {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
                     {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
-                {("0" + ((time / 10) % 100)).slice(-2)}</p>
-            </div>
-            <div>
-        <h1>Record</h1>
-                <p>69:69:69</p>
+                    {("0" + ((time / 10) % 100)).slice(-2)}
+                </p>
             </div>
         </>
     )
