@@ -1,14 +1,14 @@
 :root {
-    --shadow-color: 54deg 100% 24%;
-    --shadow-color-2: 294deg 100% 16%;
-    --shadow-elevation-low: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
+  --shadow-color: 54deg 100% 24%;
+  --shadow-color-2: 294deg 100% 16%;
+  --shadow-elevation-low: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
     0px 1.4px 1.8px -0.7px hsl(var(--shadow-color) / 0.34),
     0px 3.2px 4.1px -1.4px hsl(var(--shadow-color) / 0.46);
-    --shadow-elevation-medium: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.23),
+  --shadow-elevation-medium: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.23),
     0px 3.1px 4px -0.5px hsl(var(--shadow-color) / 0.33),
     -0.1px 7.1px 9.2px -0.9px hsl(var(--shadow-color) / 0.42),
     -0.2px 15.9px 20.5px -1.4px hsl(var(--shadow-color) / 0.51);
-    --shadow-elevation-high: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
+  --shadow-elevation-high: 0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
     -0.1px 6.6px 8.5px -0.2px hsl(var(--shadow-color) / 0.26),
     -0.2px 12px 15.5px -0.4px hsl(var(--shadow-color) / 0.3),
     -0.2px 18.6px 24px -0.6px hsl(var(--shadow-color) / 0.34),
@@ -17,17 +17,14 @@
     -0.8px 59.5px 76.8px -1.2px hsl(var(--shadow-color) / 0.47),
     -1.1px 85.3px 110px -1.4px hsl(var(--shadow-color) / 0.51);
 
-    --shadow-elevation-low-2:
-    0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.34),
+  --shadow-elevation-low-2: 0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.34),
     0px 0.5px 0.6px -1.2px hsl(var(--shadow-color-2) / 0.34),
     0px 1.2px 1.3px -2.5px hsl(var(--shadow-color-2) / 0.34);
-    --shadow-elevation-medium-2:
-    0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.36),
+  --shadow-elevation-medium-2: 0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.36),
     0px 1px 1.1px -0.8px hsl(var(--shadow-color-2) / 0.36),
     0.1px 2.5px 2.8px -1.7px hsl(var(--shadow-color-2) / 0.36),
     0.2px 6px 6.8px -2.5px hsl(var(--shadow-color-2) / 0.36);
-    --shadow-elevation-high-2:
-    0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.34),
+  --shadow-elevation-high-2: 0px 0.3px 0.3px hsl(var(--shadow-color-2) / 0.34),
     0.1px 1.8px 2px -0.4px hsl(var(--shadow-color-2) / 0.34),
     0.1px 3.3px 3.7px -0.7px hsl(var(--shadow-color-2) / 0.34),
     0.2px 5.4px 6.1px -1.1px hsl(var(--shadow-color-2) / 0.34),
@@ -38,247 +35,316 @@
 }
 
 /* animatiosn */
-@keyframes fire-fx {
-    from {
-        color: rgb(220, 15, 5);
-    filter: drop-shadow(0px 0px 2px yellow);
-    }
 
-    to {
-        color: rgb(255, 0, 0);
+@keyframes flame-fx {
+  from {
+    color: rgb(220, 15, 5);
+    filter: drop-shadow(-3px -2px 7px yellow);
+  }
+
+  to {
+    color: rgb(255, 0, 0);
+    filter: drop-shadow(2px -2px 9px yellow);
+  }
+}
+
+@keyframes fire-fx {
+  from {
+    color: rgb(220, 15, 5);
+    filter: drop-shadow(0px 0px 2px yellow);
+  }
+
+  to {
+    color: rgb(255, 0, 0);
     filter: drop-shadow(0px 3px -2px yellow);
-    }
+  }
 }
 
 @keyframes sun-fx {
-    from {
-        filter: invert(1%);
-        filter: hue-rotate(90deg);
-    }
+  from {
+    filter: invert(1%);
+    filter: hue-rotate(90deg);
+  }
 
-    to {
-        filter: invert(100%);
-        filter: hue-rotate(270deg);
-    }
+  to {
+    filter: invert(100%);
+    filter: hue-rotate(270deg);
+  }
+}
+
+@keyframes drip-fx {
+  from {
+    filter: drop-shadow(0px 0px 2px aqua);
+  }
+
+  to {
+    color: rgb(0, 139, 139);
+    filter: drop-shadow(0px 2px 3px blue);
+  }
 }
 
 @keyframes water-fx {
-    from {
+  from {
     transform: rotate(0deg);
     filter: drop-shadow(0px 0px 2px aqua);
-    }
+  }
 
-    to {
+  to {
     transform: rotate(15deg);
     color: rgb(0, 139, 139);
     filter: drop-shadow(0px 3px 3px blue);
-    }
+  }
+}
+
+@keyframes breeze-fx {
+  from {
+    transform: translate(0px);
+    filter: opacity(1);
+  }
+
+  25% {
+    transform: translateX(5px);
+    filter: opacity(0.75);
+  }
+
+  75% {
+    transform: translateX(0px);
+    filter: opacity(0.25);
+  }
+  to {
+    transform: translateX(0px);
+    filter: opacity(0.03);
+  }
 }
 
 @keyframes wind-fx {
-    from {
+  from {
     transform: translate(0px);
     color: rgb(192, 186, 180);
     filter: opacity(1);
-    }
+  }
 
-    to {
+  to {
     color: rgb(0, 139, 139);
     transform: translate(10px);
-    filter: opacity(.03);
-    }
+    filter: opacity(0.03);
+  }
 }
 
+@keyframes dirt-fx {
+  from {
+    transform: scale(0.01);
+    filter: opacity(0.01);
+    filter: drop-shadow(0px 0px 4px green);
+  }
+
+  to {
+    transform: scale(1);
+    filter: opacity(1);
+    filter: drop-shadow(0px 0px 4px green);
+  }
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 body,
 html {
-    color: #fff;
-    background: linear-gradient(
-        290deg,
-        #231036,
-        #1d0e33,
-        #180d33,
-        #150e33,
-        #0c0a29
+  color: #fff;
+  background: linear-gradient(
+    290deg,
+    #231036,
+    #1d0e33,
+    #180d33,
+    #150e33,
+    #0c0a29
   );
 }
 
 .background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 80vw;
-    height: 80vh;
-    border: rgb(214, 194, 10) 3px groove;
-    border-radius: 6px;
-    padding: 1rem;
-    box-shadow: var(--shadow-elevation-medium);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 80vh;
+  border: rgb(214, 194, 10) 3px groove;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .ingredientContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    align-content: center;
-    overflow: auto;
-    width: 99%;
-    height: 86%;
-    border-bottom: rgb(214, 194, 10) 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+  overflow: auto;
+  width: 99%;
+  height: 86%;
+  border-bottom: rgb(214, 194, 10) 1px solid;
 }
 
 button {
-    margin: none;
-    height: 100%;
-    width: 100%;
+  margin: none;
+  height: 100%;
+  width: 100%;
 }
 
 button:focus-visible {
-    background-color: rgba(166, 15, 45,.55);
-} 
+  background-color: rgba(166, 15, 45, 0.55);
+}
 
 button:active {
-    border: 1px solid yellow;
-    border-radius: 6px;
+  border: 1px solid yellow;
+  border-radius: 6px;
 }
 
 .modal {
-    color: yellow;
-    background-color: rgba(166,15,45,.8);
-    z-index: 2;
-    position: absolute;
-    top: 30vh;
-    font-size: 3rem;
-    height: 40vh;
-    width: 80vw;
-    border: 2px solid yellow;
-    border-radius: 6px;
+  color: yellow;
+  background-color: rgba(166, 15, 45, 0.8);
+  z-index: 2;
+  position: absolute;
+  top: 30vh;
+  font-size: 3rem;
+  height: 40vh;
+  width: 80vw;
+  border: 2px solid yellow;
+  border-radius: 6px;
 }
 
 .no-modal {
-    display: none;
+  display: none;
 }
 
 .ingredient {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 4rem;
-    height: 4rem;
-    border: 1px solid purple ;
-    border-radius: 6px;
-    box-shadow: var(--shadow-elevation-high-2);
-    margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid purple;
+  border-radius: 6px;
+  box-shadow: var(--shadow-elevation-high-2);
+  margin: 5px;
 }
 
-
 .dash-container {
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    width: 100%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  width: 100%;
 }
 
 .blue {
-    width: 2em;
-    height: 2em;
-    color: rgb(1, 217, 255);
-    filter: drop-shadow(0px 0px 4px cyan);
+  width: 2em;
+  height: 2em;
+  color: rgb(1, 217, 255);
+  animation-name: drip-fx;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .red {
-    width: 2em;
-    height: 2em;
-    color: rgb(255, 0, 0);
-    filter: drop-shadow(0px 0px 4px yellow);
+  width: 2em;
+  height: 2em;
+  animation-name: flame-fx;
+  animation-duration: 4.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .burning {
-    width: 2em;
-    height: 2em;
-    color: rgb(255, 0, 0);
-    animation-name: fire-fx;
-    animation-duration: 1.3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  width: 2em;
+  height: 2em;
+  color: rgb(255, 0, 0);
+  animation-name: fire-fx;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .sunny {
-    width: 2em;
-    height: 2em;
-    color: rgb(255, 0, 0);
-    animation: sun-fx;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-} 
+  width: 2em;
+  height: 2em;
+  color: rgb(255, 0, 0);
+  animation: sun-fx;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+}
 
 .raining {
-    width: 2em;
-    height: 2em;
-    color: rgb(1, 217, 255);
-    animation-duration: 1.5s;
-    animation-name: water-fx;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  width: 2em;
+  height: 2em;
+  color: rgb(1, 217, 255);
+  animation-duration: 1.5s;
+  animation-name: water-fx;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .windy {
-    width: 2em;
-    height: 2em;
-    filter: drop-shadow(0px 0px 4px rgb(27, 85, 102));
-    animation-duration: 2.3s;
-    animation-name: wind-fx;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-timing-function: ease-in;
+  width: 2em;
+  height: 2em;
+  filter: drop-shadow(0px 0px 4px rgb(27, 85, 102));
+  animation-duration: 2.3s;
+  animation-name: wind-fx;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
 }
 
 .yellow {
-    width: 2em;
-    height: 2em;
-    color: rgb(255, 238, 0);
-    filter: drop-shadow(0px 0px 4px yellow);
+  width: 2em;
+  height: 2em;
+  color: rgb(255, 238, 0);
+  filter: drop-shadow(0px 0px 4px yellow);
 }
 .brown {
-    width: 2em;
-    height: 2em;
-    color: rgb(82, 48, 9);
-    filter: drop-shadow(0px 0px 4px rgb(10, 116, 6));
+  width: 2em;
+  height: 2em;
+  color: rgb(82, 48, 9);
+  filter: drop-shadow(0px 0px 4px green);
+  animation-name: dirt-fx;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 .white {
-    width: 2em;
-    height: 2em;
-    color: rgb(192, 186, 180);
-    filter: drop-shadow(0px 0px 4px rgb(27, 85, 102));
+  width: 2em;
+  height: 2em;
+  color: rgb(192, 186, 180);
+  animation-duration: 2.5s;
+  animation-name: breeze-fx;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 .blue-gray {
-    width: 2em;
-    height: 2em;
-    color: rgb(105, 105, 105);
-    filter: drop-shadow(0px 0px 4px rgb(10, 116, 6));
+  width: 2em;
+  height: 2em;
+  color: rgb(105, 105, 105);
+  filter: drop-shadow(0px 0px 4px rgb(10, 116, 6));
 }
