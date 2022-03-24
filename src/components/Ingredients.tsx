@@ -46,9 +46,6 @@ export const Ingredient: React.FC = () => {
     checkForMatch()
   },[checkForMatch])
 
- // const clickStart = ():void => {
- //     setModal("no-modal")
- // }
 
   // takes the currentIngredients[] and maps over it to hydrate
   // our dom with <div><button><icon></button></div>
