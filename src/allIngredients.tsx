@@ -9,10 +9,11 @@ import {
   GiTornado,
   GiSnowing,
 } from "react-icons/gi";
+import { IoThunderstormSharp } from "react-icons/io5";
 import { HiFire } from "react-icons/hi";
 import { WiWindy } from "react-icons/wi";
 import { BsWind } from "react-icons/bs";
-import { FaMountain } from "react-icons/fa";
+import { FaMountain, FaTree } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 export interface ingredient {
@@ -111,4 +112,18 @@ export const ingredientsArr: ingredient[] = [
     mix: "firecampfire",
     isActive: false,
   },
+  {
+      name: "storm",
+      icon: IoThunderstormSharp,
+      color: "electric",
+      mix: "rainrain",
+      isActive: false,
+  },
+  {
+      name: "tree",
+      icon: FaTree,
+      color: "trees",
+      mix: "earthrain",
+      isActive: false,
+  }
 ];

@@ -83,14 +83,25 @@
   }
 }
 
+@keyframes electric-fx {
+  from {
+    filter: drop-shadow(0px 0px 1px aqua);
+  }
+
+  to {
+    color: rgb(33, 50, 74);
+    filter: drop-shadow(0px 2px 14px rgb(255, 255, 0));
+  }
+}
+
 @keyframes water-fx {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.5);
     filter: drop-shadow(0px 0px 2px aqua);
   }
 
   to {
-    transform: rotate(15deg);
+    transform: rotate(15deg) scale(1.5);
     color: rgb(0, 139, 139);
     filter: drop-shadow(0px 3px 3px blue);
   }
@@ -140,10 +151,12 @@
 
   to {
     transform: scale(1);
-    filter: opacity(1);
+    filter: opacity(0.01);
     filter: drop-shadow(0px 0px 4px green);
   }
 }
+
+/*----------------------------------------------------------------*/
 
 * {
   margin: 0;
@@ -266,6 +279,17 @@ button:active {
   animation-direction: alternate;
 }
 
+.electric {
+  width: 2em;
+  height: 2em;
+  color: rgb(139, 163, 166);
+  animation-name: electric-fx;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(1, 0.005, 1, -0.12);
+}
+
 .red {
   width: 2em;
   height: 2em;
@@ -333,6 +357,18 @@ button:active {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
+
+.trees {
+  width: 2em;
+  height: 2em;
+  color: rgb(48, 45, 35);
+  filter: drop-shadow(0px -4px 6px green);
+  animation-name: dirt-fx;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
 .white {
   width: 2em;
   height: 2em;
