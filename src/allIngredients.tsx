@@ -255,21 +255,21 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "glass",
     icon: GiGlassShot,
-    color: "white",
+    color: "blue",
     mix: "fireearth",
     isActive: false,
   },
   {
     name: "magnify",
     icon: GiMagnifyingGlass,
-    color: "white",
+    color: "glass",
     mix: "glassstick",
     isActive: false,
   },
   {
     name: "microscope",
     icon: GiMicroscope,
-    color: "white",
+    color: "glass",
     mix: "magnifytools",
     isActive: false,
   },
@@ -346,7 +346,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "electricity",
     icon: GiPlug,
-    color: "white",
+    color: "electric",
     mix: "lightningscience",
     isActive: false,
   },
