@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 type Props = {
     startClock: boolean 
 }
-export const Dash: React.FC<any> = (props: Props)  => {
+export const Dash = (props: Props)  => {
 
 const [time, setTime] = useState(0);
 const [running, setRunning] = useState(false);
