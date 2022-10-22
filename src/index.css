@@ -82,6 +82,16 @@
   }
 }
 
+@keyframes medical-fx {
+  from {
+    filter: drop-shadow(2px 2px 1px white) blur(5px);
+  }
+
+  to {
+    filter: drop-shadow(2px 2px 1px rgb(255, 68, 235)) blur(0);
+  }
+}
+
 @keyframes drip-fx {
   from {
     filter: drop-shadow(0px 0px 2px aqua);
@@ -114,6 +124,19 @@
     transform: rotate(15deg) scale(1.5);
     color: rgb(0, 139, 139);
     filter: drop-shadow(0px 3px 3px blue);
+  }
+}
+
+@keyframes bacteria-fx {
+  from {
+    transform: rotate(0deg) scale(1.5);
+    filter: drop-shadow(0px 0px 2px rgb(0, 5, 252));
+  }
+
+  to {
+    transform: rotate(15deg) scale(1.5);
+    color: rgb(0, 139, 139);
+    filter: drop-shadow(0px 3px 3px rgb(199, 0, 57));
   }
 }
 
@@ -357,11 +380,23 @@ button:active {
   color: rgb(255, 238, 0);
   filter: drop-shadow(0px 0px 4px yellow);
 }
+
 .brown {
   width: 2em;
   height: 2em;
   color: rgb(82, 48, 9);
   filter: drop-shadow(0px 0px 4px green);
+  animation-name: dirt-fx;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.light-brown {
+  width: 2em;
+  height: 2em;
+  color: rgb(82, 48, 9);
+  filter: drop-shadow(0px 0px 4px rgb(169, 147, 102));
   animation-name: dirt-fx;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -379,15 +414,56 @@ button:active {
   animation-timing-function: ease-in;
 }
 
+.plain-wood {
+  width: 2em;
+  height: 2em;
+  color: rgb(85, 56, 4);
+  animation-duration: 2.5s;
+  animation-name: breeze-fx;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.house {
+  width: 2em;
+  height: 2em;
+  color: rgb(107, 0, 252);
+  animation-duration: 2.5s;
+  animation-name: breeze-fx;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 .glass {
   width: 2em;
   height: 2em;
-  color: rgn(112, 128, 144);
+  color: rgb(112, 128, 144);
   animation-name: glass-fx;
   animation-duration: 3.4s;
   animation-iteration-count: 10;
   animation-direction: alternate;
   animation-timing-function: ease-in;
+}
+
+.medical {
+  width: 2em;
+  height: 2em;
+  color: rgb(160, 0, 0);
+  animation-name: medical-fx;
+  animation-duration: 3.4s;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+}
+
+.bacteria {
+  width: 2em;
+  height: 2em;
+  color: rgb(168, 252, 0);
+  animation-duration: 2.5s;
+  animation-name: bacteria-fx;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .white {
@@ -399,6 +475,24 @@ button:active {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+.crop-in-wind {
+  width: 2em;
+  height: 2em;
+  color: rgb(255, 230, 68);
+  animation-duration: 2.5s;
+  animation-name: breeze-fx;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.black-gray {
+  width: 2em;
+  height: 2em;
+  color: rgb(96, 95, 89);
+  filter: drop-shadow(0px 0px 4px rgb(0,0,0));
+}
+
 .blue-gray {
   width: 2em;
   height: 2em;

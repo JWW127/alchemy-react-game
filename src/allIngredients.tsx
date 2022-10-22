@@ -178,7 +178,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "stick",
     icon: GiWoodStick,
-    color: "white",
+    color: "light-brown",
     mix: "treeearth",
     isActive: false,
   },
@@ -192,7 +192,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "woodpile",
     icon: GiWoodPile,
-    color: "white",
+    color: "plain-wood",
     mix: "hatchettree",
     isActive: false,
   },
@@ -206,7 +206,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "plank",
     icon: GiWoodBeam,
-    color: "white",
+    color: "plain-wood",
     mix: "sawwoodpile",
     isActive: false,
   },
@@ -234,14 +234,14 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "cabin",
     icon: GiWoodCabin,
-    color: "white",
+    color: "plain-wood",
     mix: "cavewoodpile",
     isActive: false,
   },
   {
     name: "house",
     icon: GiFamilyHouse,
-    color: "white",
+    color: "house",
     mix: "cabinplank",
     isActive: false,
   },
@@ -283,7 +283,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "crop",
     icon: GiWheat,
-    color: "white",
+    color: "crop-in-wind",
     mix: "waterearth",
     isActive: false,
   },
@@ -297,7 +297,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "beam",
     icon: GiIBeam,
-    color: "white",
+    color: "black-gray",
     mix: "ironcampfire",
     isActive: false,
   },
@@ -311,7 +311,7 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "factory",
     icon: GiFactory,
-    color: "white",
+    color: "black-gray",
     mix: "buildinggenerator",
     isActive: false,
   },
@@ -332,14 +332,14 @@ export const ingredientsArr: ingredient[] = [
   {
     name: "pills",
     icon: GiMedicines,
-    color: "white",
+    color: "medical",
     mix: "sciencebacteria",
     isActive: false,
   },
   {
     name: "bacteria",
     icon: FaBacteria,
-    color: "white",
+    color: "bacteria",
     mix: "sciencewater",
     isActive: false,
   },
